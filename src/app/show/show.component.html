@@ -1,0 +1,82 @@
+
+  <div class="container"><br>
+    <div class="row hidden-md-up">
+      <div class="col-md-4 card-container" *ngFor="let item of data | filter:filter | filterStatus:filterStatus">
+        <div class="card">
+          <img src="{{item.image}}" class="card-img-top" alt="...">
+          <div class="card__info">
+            <h3 class="card-title">{{item.name}}</h3>
+            <div class="status {{item.status}}">
+              {{item.status}}
+            </div>
+
+
+
+
+
+
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal" (click)="openModal(item.id)">
+              Abrir
+            </button>
+             <!-- Modal -->
+             <div class="modal fade" id="testModal" tabindex="-1" #testModal  aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title letra-negra" id="exampleModalLabel">{{character.name}}</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="{{character.image}}" class="card-img-top letra-negra" alt="...">
+                    <h5 class="card-title letra-negra">{{character.status}}</h5>
+                    <p class="card-text letra-negra">{{character.origin.name}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <br>
+      </div>
+
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only" (click)="prevpage()">Previous</span>
+          </a>
+        </li>
+        <li class="page-item" *ngFor="let item of arrayPages ">
+          <button class="page-link" (click)="updatepage(item)">{{item}}</button>
+          <!--<pagination-controls (pageChange)="pagination.currentPage = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>-->
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only" (click)="nextpage()">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+  <div>
+
+  </div>
+
+

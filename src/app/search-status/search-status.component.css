@@ -1,0 +1,28 @@
+.search {
+  width: 400px;
+  margin: 3rem auto 0;
+  max-width: 650px;
+  margin-top: 40px;
+
+  padding: 10px;
+  color: #fff;
+  border-radius: 40px;
+  background-color: var(--background-card);
+}
+
+button {
+  font-weight: bold;
+  border: none;
+}
+
+.search .btn-outline-secondary {
+  color:green;
+}
+
+.btn-outline-success{
+  color:red;
+}
+
+.btn-outline-danger{
+  color:white;
+}
